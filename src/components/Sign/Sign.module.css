@@ -1,0 +1,63 @@
+.signUp{
+    margin-top: 3rem;
+    width: 19rem;
+    height: 21rem;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 2rem 2rem;
+
+}
+
+
+/* Sign in design */
+.signIn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16rem;
+    height: 19rem;
+    transform: translate(-50%,-50%);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 2rem 2rem;
+
+}
+
+.heading{
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.email, .password{
+    margin-top: 1rem;
+}
+.input{
+    width: 98.5%;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 0.5rem 0 0.5rem 0.2rem;
+    font-size: 0.9rem;               
+}
+
+.submitButton{
+    margin-top: 2rem;
+    width: 100%;
+    padding: 6px 0;
+    border-radius: 16px;
+    background-color: #374785;
+    border: 2px solid #374785;
+    cursor: pointer;
+    color: white;
+}
+
+.submitButton:hover{
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0 0 8px black;
+    color: white;
+}

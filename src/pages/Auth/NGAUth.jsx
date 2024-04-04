@@ -47,7 +47,7 @@ export default function NGAuth() {
         <div className={styles.form}>
             {isNewUser ? NGSignup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleTheme, handleCity, handleGoal, handleUID) : Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange)}
             {isNewUser? <p>Already have an account? <a onClick={()=>{setIsNewUser(false);}}>Signin</a></p> :
-            <p>Don't have an account? <a onClick={()=>{
+            <p className={styles.noAccount}>Don't have an account? <a onClick={()=>{
                 setIsNewUser(true);
             }}>Signup</a></p>
         }

@@ -6,4 +6,4 @@ import NGO from "./NGO/NGO";
 
 
 
-export {Home, Error, Auth, NGAuth, NGO, Auth}
+export {Home, Error, Auth, NGAuth, NGO}

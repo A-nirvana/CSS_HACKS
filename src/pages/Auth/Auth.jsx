@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Signin, Signup } from '../../components';
-import styles from './Auth.module.css'
+import styles from './Auth.module.css';
+
 export default function Auth() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,14 +27,17 @@ export default function Auth() {
     };
 
     return (
-        <div className={styles.form}>
-            {isNewUser ? Signup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange) : Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange)}
-            {isNewUser? <p>Already have an account? <a onClick={()=>{setIsNewUser(false);}}>Signin</a></p> :
-            <p>Don't have an account? <a onClick={()=>{
-                setIsNewUser(true);
-            }}>Signup</a></p>
-        }
+        <div className={styles.main}>
+            <div className={styles.signIn} style={isNewUser?{"height":"21rem","width":"19rem"}:{}}>
+                {isNewUser ? Signup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange) : Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange)}
+                {isNewUser? <p className={styles.haveAccount}>Already have an account? <a onClick={()=>{setIsNewUser(false);}}>Signin</a></p> :
+                <p className={styles.noAccount}>Don't have an account? <a onClick={()=>{
+                    setIsNewUser(true);
+                }}>Signup</a></p>
+            }
+            </div>
         </div>
+        
     );
 };
 

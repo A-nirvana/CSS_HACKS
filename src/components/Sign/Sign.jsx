@@ -1,17 +1,15 @@
-
-
+import { TextField } from '@mui/material';
+import styles from './Sign.module.css';
 export function Signup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange){
     return (
-        <div>
+        <div className={styles.signUp}>
             <h2>Let's Contribute</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={handleEmailChange} />
+                <TextField className={styles.input} label="Email" variant="standard" value={email} onChange={handleEmailChange}/>
                 </div>
                 <div>
-                    <label>Business Name:</label>
-                    <input type="text" value={username} onChange={handleUsernameChange} />
+                    <TextField className={styles.input} label="Business Name" variant="standard" type='password'/>
                 </div>
                 <div>
                     <label>Which Setor would you like to donate to</label>
@@ -25,14 +23,13 @@ export function Signup(handleSubmit, email, handleEmailChange, password, handleP
                     </select>
                 </div>
                 <div>
-                    <label>Set a Password:</label>
-                    <input type="password" value={password} onChange={handlePasswordChange} />
+                    <TextField className={styles.input} label="Set Password" variant="standard" type='password' value={password} onChange={handlePasswordChange} />
                 </div>
                 <div>
-                    <label>Confirm Password:</label>
-                    <input type="password" />
+                    <TextField className={styles.input} label="Confirm Password" variant="standard" type='password' />
+                    
                 </div>
-                <button type="submit">Sign In</button>
+                <button type="submit" className={styles.submitButton}>Sign Up</button>
             </form>
         </div>
     )
@@ -40,18 +37,18 @@ export function Signup(handleSubmit, email, handleEmailChange, password, handleP
 
 export function Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange){
     return (
-        <div>
-            <h2>Your help to the society matters, Welcome back</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={handleEmailChange} />
+        <div className={styles.signIn}>
+            <h2 className={styles.heading}>Back to Contributing</h2>
+            <form onSubmit={handleSubmit} className={styles.signInForm}>
+                <div className={styles.email}>
+                    {/* <label>Email:</label> */}
+                    <TextField className={styles.input} label="Email" variant="standard" value={email} onChange={handleEmailChange}/>
                 </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="password" value={password} onChange={handlePasswordChange} />
+                <div className={styles.password}>
+                    {/* <label>Password:</label> */}
+                    <TextField className={styles.input} label="Password" variant="standard" type='password' value={password} onChange={handlePasswordChange} />
                 </div>
-                <button type="submit">Sign In</button>
+                <button type="submit" className={styles.submitButton}>Sign In</button>
             </form>
         </div>
     )
