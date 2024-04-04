@@ -19,11 +19,12 @@ const BusinessSchema = new mongoose.Schema({
     Email : String,
     password : String,
     ImageLink : String,
-    website : String
+    website : String,
+    sector : String,
 })
 
 const Ngo = mongoose.model('Ngo', NgoSchema);
 const Business = mongoose.model('Business', BusinessSchema);
 
-module.exports = {Ngo, Business};
+export {Ngo, Business};
 
