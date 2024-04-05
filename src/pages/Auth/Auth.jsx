@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Signin, Signup } from '../../components';
 import styles from './Auth.module.css';
+import axios from 'axios';
+import {BASE_URL} from '../../config.js'
+import { setCookie} from '../cookie/index.js';
 
 export default function Auth() {
     const [email, setEmail] = useState('');
@@ -21,15 +24,10 @@ export default function Auth() {
     }
 
 
-    //Code to handle form submission
-    const handleSubmit = (e) => {
-        
-    };
-
-    return (
+     return (
         <div className={styles.main}>
             <div className={styles.signIn} style={isNewUser?{"height":"21rem","width":"19rem"}:{}}>
-                {isNewUser ? Signup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange) : Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange)}
+                {isNewUser ? Signup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange) : Signin(email, handleEmailChange, password, handlePasswordChange,"business")}
                 {isNewUser? <p className={styles.haveAccount}>Already have an account? <a onClick={()=>{setIsNewUser(false);}}>Signin</a></p> :
                 <p className={styles.noAccount}>Don't have an account? <a onClick={()=>{
                     setIsNewUser(true);
@@ -39,5 +37,4 @@ export default function Auth() {
         </div>
         
     );
-};
-
+}

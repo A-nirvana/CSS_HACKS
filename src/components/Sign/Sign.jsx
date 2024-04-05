@@ -1,10 +1,17 @@
 import { TextField } from '@mui/material';
 import styles from './Sign.module.css';
-export function Signup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange){
+export function Signup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange){
     return (
         <div className={styles.signUp}>
             <h2>Let's Contribute</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={()=>{
+                axios.post(`${BASE_URL}/business/signup`,{
+                    email : email,
+                    password : password
+                }).then((response)=>{
+                    setCookie('Authorization',"Bearer "+response.data.token,30)
+                })
+            }}>
                 <div>
                 <TextField className={styles.input} label="Email" variant="standard" value={email} onChange={handleEmailChange}/>
                 </div>
@@ -35,11 +42,27 @@ export function Signup(handleSubmit, email, handleEmailChange, password, handleP
     )
 };
 
-export function Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange){
+export function Signin(email, handleEmailChange, password, handlePasswordChange, type){
     return (
         <div className={styles.signIn}>
             <h2 className={styles.heading}>Back to Contributing</h2>
-            <form onSubmit={handleSubmit} className={styles.signInForm}>
+            <form onSubmit={()=>{
+                axios.post(`${BASE_URL}/${type}/login`,{
+                    email : email,
+                    password : password
+                },{
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                }).then((response)=>{
+                        if(response.data.token){
+                            setCookie('Authorization',"Bearer "+response.data.token,30)
+                        }
+                        else {
+                            alert("Wrong password or business name")
+                        }
+                })
+            }} className={styles.signInForm}>
                 <div className={styles.email}>
                     {/* <label>Email:</label> */}
                     <TextField className={styles.input} label="Email" variant="standard" value={email} onChange={handleEmailChange}/>

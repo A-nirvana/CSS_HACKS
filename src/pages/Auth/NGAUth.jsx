@@ -6,7 +6,7 @@ export default function NGAuth() {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [isNewUser, setIsNewUser] = useState(false);
-    const [theme, setTheme] = useState('');
+    const [sector, setSector] = useState('');
     const [city, setCity] = useState('');
     const [goal, setGoal] = useState('');
     const [UID, setUID] = useState('');
@@ -23,8 +23,8 @@ export default function NGAuth() {
         setUsername(e.target.value);
     }
 
-    const handleTheme = (e) => {
-        setTheme(e.target.value);
+    const handleSector = (e) => {
+        setSector(e.target.value);
     }
     const handleCity = (e) =>{
         setCity(e.target.value)
@@ -38,14 +38,9 @@ export default function NGAuth() {
         setUID(e.target.value);
     }
 
-    //Code to handle form submission
-    const handleSubmit = (e) => {
-        
-    };
-
     return (
         <div className={styles.form}>
-            {isNewUser ? NGSignup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleTheme, handleCity, handleGoal, handleUID) : Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange)}
+            {isNewUser ? NGSignup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleSector, handleCity, handleGoal, handleUID) : Signin(email, handleEmailChange, password, handlePasswordChange,"ngo")}
             {isNewUser? <p>Already have an account? <a onClick={()=>{setIsNewUser(false);}}>Signin</a></p> :
             <p className={styles.noAccount}>Don't have an account? <a onClick={()=>{
                 setIsNewUser(true);

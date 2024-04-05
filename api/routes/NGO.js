@@ -1,7 +1,7 @@
 import express from 'express';
 import authenticateJwt from '../middleware/auth.js';
 import {Ngo, Business} from '../db/index.js'
-import SECRET from '../middleware/auth.js';
+import {SECRET} from '../middleware/auth.js';
 const router = express.Router();
 import jwt from 'jsonwebtoken';
 import cors from 'cors';

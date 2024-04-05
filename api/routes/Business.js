@@ -1,7 +1,7 @@
 import express from 'express';
 import authenticateJwt from '../middleware/auth.js';
 import {Business, Ngo} from '../db/index.js'
-import SECRET from '../middleware/auth.js';
+import {SECRET} from '../middleware/auth.js';
 const router = express.Router();
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
@@ -17,23 +17,23 @@ router.get("/", async (req, res) => {
 
 
 router.post('/signup', async (req, res) => {
-    const { username, password } = req.body;
-    const user = await Business.findOne({ username });
+    const { email, password } = req.body;
+    const user = await Business.findOne({ email });
     if (user) {
         res.status(403).json({ message: 'Business already exists' });
     } else {
-        const newBusiness = new Business({ username, password });
+        const newBusiness = new Business({ email, password });
         await newBusiness.save();
-        const token = jwt.sign({ username }, SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ email }, SECRET, { expiresIn: '1h' });
         res.json({ message: 'Business registered successfully', token });
     }
 });
 
 router.post('/login', async (req, res) => {
-    const { username, password } = req.headers;
-    const user = await Business.findOne({ username, password });
+    const { email, password } = req.headers;
+    const user = await Business.findOne({ email, password });
     if (user) {
-        const token = jwt.sign({ username }, SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ email }, SECRET, { expiresIn: '1h' });
         res.json({ message: 'Logged in successfully', token });
     } else {
         res.status(403).json({ message: 'Invalid username or password' });
