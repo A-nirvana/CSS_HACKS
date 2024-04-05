@@ -4,4 +4,5 @@ import NgoCard from "./NGOCard/NgoCard";
 import { Signin, Signup } from "./Sign/Sign";
 // import NgoCard from "./NGOCard/NgoCard";
 import {NGSignup} from "./NGOsign/NGOsign";
-export {Navbar, Footer, Signin, Signup, NGSignup, NgoCard}
+import CompanyCard from "./CompanyCard/CompanyCard";
+export {Navbar, Footer, Signin, Signup, NGSignup, NgoCard, CompanyCard}

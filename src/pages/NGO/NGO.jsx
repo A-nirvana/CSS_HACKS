@@ -10,6 +10,7 @@ export default function NGO() {
     return (
         <div className={styles.main}>
             <div className={styles.headingContainer}>
+                <h1>Discover the Top NGO</h1>
                 <input onChange={(e) => setSearch(e.target.value)} type="text" name="" id="" placeholder='Enter the Area'/>
                 {/* <button>Search</button> */}
             </div>
