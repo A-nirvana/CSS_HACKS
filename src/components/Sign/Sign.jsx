@@ -1,5 +1,8 @@
 import { TextField } from '@mui/material';
 import styles from './Sign.module.css';
+import axios from 'axios';
+import {BASE_URL} from '../../config.js'
+import { setCookie} from '../../pages/cookie/index.js';
 export function Signup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange){
     return (
         <div className={styles.signUp}>

@@ -17,14 +17,14 @@ router.get('/', async (req, res)=>{
 
 
 router.post('/signup', async (req, res) => {
-    const { username, password } = req.body;
-    const user = await Ngo.findOne({ username });
+    const { email } = req.body;
+    const user = await Ngo.findOne({ email });
     if (user) {
         res.status(403).json({ message: 'Business already exists' });
     } else {
-        const newBusiness = new Ngo({ username, password });
+        const newBusiness = new Ngo(req.body);
         await newBusiness.save();
-        const token = jwt.sign({ username }, SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ username }, SECRET, { expiresIn: '30d' });
         res.json({ message: 'Business registered successfully', token });
     }
 });
@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
     const { username, password } = req.headers;
     const user = await Ngo.findOne({ username, password });
     if (user) {
-        const token = jwt.sign({ username }, SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ username }, SECRET, { expiresIn: '30d' });
         res.json({ message: 'Logged in successfully', token });
     } else {
         res.status(403).json({ message: 'Invalid username or password' });

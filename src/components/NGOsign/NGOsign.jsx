@@ -1,5 +1,5 @@
 
-export function NGSignup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleTheme,handleCity, handleGoal, handleUID){
+export function NGSignup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleTheme,handleCity, handleGoal, handleUID,handleLogo){
     return (
         <div>
             <h2>Welcome, We help you and you help the people</h2>
@@ -37,6 +37,10 @@ export function NGSignup(email, handleEmailChange, password, handlePasswordChang
                         <option>Pune</option>
                         <option>Others</option>
                     </select>
+                </div>
+                <div>
+                    <label>Link to your logo :</label>
+                    <input type="text" onChange={handleLogo}/>
                 </div>
                 <div>
                     <label>What is the main goal of your NGO :</label>

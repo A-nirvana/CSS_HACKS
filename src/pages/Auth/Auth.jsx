@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Signin, Signup } from '../../components';
 import styles from './Auth.module.css';
-import axios from 'axios';
-import {BASE_URL} from '../../config.js'
-import { setCookie} from '../cookie/index.js';
+
 
 export default function Auth() {
     const [email, setEmail] = useState('');

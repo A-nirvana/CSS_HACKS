@@ -24,7 +24,7 @@ router.post('/signup', async (req, res) => {
     } else {
         const newBusiness = new Business({ email, password });
         await newBusiness.save();
-        const token = jwt.sign({ email }, SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ email }, SECRET, { expiresIn: '30d' });
         res.json({ message: 'Business registered successfully', token });
     }
 });
@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.headers;
     const user = await Business.findOne({ email, password });
     if (user) {
-        const token = jwt.sign({ email }, SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ email }, SECRET, { expiresIn: '30d' });
         res.json({ message: 'Logged in successfully', token });
     } else {
         res.status(403).json({ message: 'Invalid username or password' });

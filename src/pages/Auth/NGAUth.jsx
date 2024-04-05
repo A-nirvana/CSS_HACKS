@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {Signin, NGSignup } from '../../components';
 import styles from './NGAuth.module.css'
+import { setCookie } from '../cookie';
+import axios from 'axios';
 export default function NGAuth() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -10,6 +12,7 @@ export default function NGAuth() {
     const [city, setCity] = useState('');
     const [goal, setGoal] = useState('');
     const [UID, setUID] = useState('');
+    const [logo, setLogo] = useState('');
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -38,9 +41,27 @@ export default function NGAuth() {
         setUID(e.target.value);
     }
 
+    const handleLogo = (e) => {
+        setLogo(e.target.value);
+    }
+
+    const handleSubmit = async (e) =>{
+        const response = await axios.post(`${BASE_URL}/business/signup`,{
+            email,
+            password,
+            type : sector,
+            adress : city,
+            moto : goal,
+            uid : UID,
+            logo : logo
+        })
+
+        setCookie("Authorization","Bearer "+response.data.token,30)
+    }
+
     return (
         <div className={styles.form}>
-            {isNewUser ? NGSignup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleSector, handleCity, handleGoal, handleUID) : Signin(email, handleEmailChange, password, handlePasswordChange,"ngo")}
+            {isNewUser ? NGSignup(handleSubmit,email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleSector, handleCity, handleGoal, handleUID,handleLogo) : Signin(email, handleEmailChange, password, handlePasswordChange,"ngo")}
             {isNewUser? <p>Already have an account? <a onClick={()=>{setIsNewUser(false);}}>Signin</a></p> :
             <p className={styles.noAccount}>Don't have an account? <a onClick={()=>{
                 setIsNewUser(true);
