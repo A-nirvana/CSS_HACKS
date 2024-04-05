@@ -122,3 +122,201 @@
     font-size: 2rem;
     font-weight: 600;
 }
+
+.Businesscard{
+    display: flex;
+    justify-content: center;
+}
+.verifiedNGOs, .topMNCs{
+    margin-left: 8.5rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background-color: #24305e;
+    width: 81%;
+    color: #fff;
+    padding: 0.5rem;
+}
+.viewmore{
+    position: absolute;
+    background-color: rgba(79, 78, 78, 0.21);
+    width: 18rem;
+    height: 20rem;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    right: 8.45rem;
+}
+.viewmore a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.5rem;
+    color: black;
+}
+.Businesscard a{
+    color: black;
+}
+
+.topMNCs{
+    margin-top: 5rem;
+}
+
+.aboutus{
+    width: 100%;
+    height: 50rem;
+    /* background-color: #f8f1c9; */
+    background-color: #f8e9a1;
+    margin-top: 5rem;
+}
+.aboutus h2{
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+.aboutus p{
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 60%;
+    font-size: 1.3rem;
+}
+.readmore{
+    margin-top: 2rem;
+    margin-left: 46%;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 24px;
+    background-color: #e1141e;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.readmore:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 3px 5px 1px #e1141e77;
+}
+.aboutimage{
+    width: 70%;
+    height: 27rem;
+    background: url("/public/Ngo-fund.avif");
+    background-size: cover;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.contactus{
+    width: 80%;
+    /* height: 20rem; */
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactHeader{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0.6rem 0;
+    background-color: #a8d0e6;
+}
+.writetous{
+    width: 30%;
+    margin-right: 8rem;
+    margin-left: 6rem;
+    
+}
+.writetous h3{
+    font-size: 2.5rem;
+}
+.writetous p{
+    margin-right: 2rem;
+    font-size: 1.4rem;
+    margin-top: 1.3rem;
+}
+
+.mail{
+    width: 45%;
+}
+.twoInputs .input{
+    width: 15rem;
+    margin: 1rem 1rem;
+}
+.twoInputslong .input{
+    width: 94%;
+    margin: 1rem 1rem;
+}
+.submitmail{
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 20px;
+    background-color: #a8d0e6;
+    margin-top: 4rem;
+    margin-left: 1rem;
+}
+
+.getintouchHeadline{
+    width: 60%;
+    height: 6rem;
+    margin: 5rem auto 0;
+    background-color: #fdd831;
+    z-index: 10;
+    box-shadow: 0 -3px 5px 1px #000000a2;
+}
+.getintouchHeadline h3{
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 2rem;
+}
+.getintouch{
+    width: 100%;
+    height: 20rem;
+    background-color: #fdd831;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.getintouchdiv{
+    width: 20rem;
+    height: 15rem;
+    background-color: white;
+    margin: 2.5rem 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 -0 8px 0 #0000007e;
+}
+
+.contactIcon1{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    top: -2rem;
+    left: 40%;
+    background: url("/contact-address-icon.png");
+    background-size: cover;
+}
+.contactIcon2{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    top: -2rem;
+    left: 40%;
+    background: url("/contact-mail-icon.png");
+    background-size: cover;
+}
+.contactIcon3{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    top: -2rem;
+    left: 40%;
+    background: url("/contact-phone-icon.png");
+    background-size: cover;
+}
+.getintouchdiv h6{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.getintouchdiv p{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
