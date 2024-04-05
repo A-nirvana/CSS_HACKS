@@ -15,7 +15,7 @@ export default function Home() {
                 <p className={styles.p3}>Education and literacy programmes targeting underprivileged girls and women</p>
                 <div className={`${styles.image5} ${styles.images}`}></div>
             </div>
-            <div className={styles.finalHeadline}>
+            <div id='signin' className={styles.finalHeadline}>
                 Join us and contribute  to the betterment of the society
                 <div className={styles.joinUs}>
                     <a href="#">Join as a Corporate</a><a href="#">Join as an NGO</a><a href="#">Contribute as an individual</a>
