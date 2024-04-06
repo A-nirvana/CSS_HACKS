@@ -62,6 +62,18 @@
     font-weight: 600;
 }
 
+.images{
+    background-position: center;
+    border: 1px solid #000000;
+    transition: background-position 0.3s ease-in-out;
+}
+
+.images:hover{
+    background-position: 50% 25%;
+    filter: brightness(75%);
+    transition: 0.5s;
+}
+
 .finalHeadline{
     width: 90%;
     margin-left: 5%;

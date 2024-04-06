@@ -1,7 +1,6 @@
 .signUp{
-    margin-top: 3rem;
     width: 19rem;
-    height: 21rem;
+    height: 28rem;
     position: absolute;
     top: 38%;
     left: 50%;
@@ -9,7 +8,6 @@
     border: 2px solid black;
     border-radius: 10px;
     padding: 2rem 2rem;
-
 }
 
 

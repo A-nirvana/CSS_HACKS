@@ -4,16 +4,28 @@ import axios from 'axios';
 import {BASE_URL} from '../../config.js'
 import { setCookie} from '../../pages/cookie/index.js';
 
-export function Signup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange){
-    
+export function Signup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange, city, handleCity, goal, handleGoal, logo, handleLogo){
+
     return (
         <div className={styles.signUp}>
             <h2>Let's Contribute</h2>
             <form onSubmit={(e)=>{
+                if(password.length<8){
+                    alert("Password should be atleast 8 characters long")
+                    return
+                }
+                if(username==='' || email==='' || password===''){
+                    alert("All fields are required")
+                    return
+                }
                 e.preventDefault()
                 axios.post(`${BASE_URL}/business/signup`,{
+                    name : username,
                     email,
-                    password
+                    password,
+                    desc : goal,
+                    address : city,
+                    logo
                 }).then((response)=>{
                     setCookie('Authorization',"Bearer "+response.data.token,30)
                     alert(response.data.message)
@@ -23,7 +35,7 @@ export function Signup(email, handleEmailChange, password, handlePasswordChange,
                 <TextField className={styles.input} label="Email" variant="standard" value={email} onChange={handleEmailChange}/>
                 </div>
                 <div>
-                    <TextField className={styles.input} label="Business Name" variant="standard" type='text'/>
+                    <TextField className={styles.input} label="Business Name" variant="standard" onChange={handleUsernameChange}/>
                 </div>
                 <div>
                     <label>Which Setor would you like to donate to</label>
@@ -40,8 +52,16 @@ export function Signup(email, handleEmailChange, password, handlePasswordChange,
                     <TextField className={styles.input} label="Set Password" variant="standard" type='password' value={password} onChange={handlePasswordChange} />
                 </div>
                 <div>
-                    <TextField className={styles.input} label="Confirm Password" variant="standard" type='password' />
-                    
+                    <TextField className={styles.input} label="Confirm Password" variant="standard" type='password'  />
+                </div>
+                <div>
+                    <TextField className={styles.input} label="City" variant="standard" type='text' onChange={handleCity}/>
+                </div>
+                <div>
+                    <TextField className={styles.input} label="Goal" variant="standard" type='text' onChange={handleGoal} />
+                </div>
+                <div>
+                    <TextField className={styles.input} label="Link to your Logo" variant="standard" type='text' onChange={handleLogo} />
                 </div>
                 <button type="submit" className={styles.submitButton}>Sign Up</button>
             </form>

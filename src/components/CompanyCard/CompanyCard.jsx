@@ -23,7 +23,7 @@ export default function CompanyCard({data}) {
         <ul className={styles.ul}>
           <li>{data.reviews} Reviews</li>
           <li>{data.followers} Followers</li>
-          <li>{data.donations} Dontaions</li>
+          <li>{data.donations} Donations</li>
           {/* <li>TBD</li> */}
         </ul>
       </div>

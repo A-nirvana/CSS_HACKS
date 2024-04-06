@@ -19,9 +19,11 @@ const BusinessSchema = new mongoose.Schema({
     name : String,
     email : String,
     password : String,
-    imageLink : String,
-    website : String,
-    sector : String,
+    logo : String,
+    address : String,
+    followers : Number,
+    desc : String,
+    donations : Number,
 })
 
 const Ngo = mongoose.model('Ngo', NgoSchema);

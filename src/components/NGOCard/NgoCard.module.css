@@ -17,6 +17,14 @@
     border: 14px;
 }
 
+.QR{
+    position: absolute;
+    height: 8rem;
+    bottom: -1rem;
+    right: 24.5rem;
+    border: 1px solid #000;
+}
+
 .logoContainer {
     height: 4rem;
     width: 4rem;
@@ -53,9 +61,7 @@
     font-weight: 200;
     font-size: 1.1rem;
 }
-.row2 {
 
-}
 .ul {
     display: flex;
     justify-content: space-around;

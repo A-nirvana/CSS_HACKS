@@ -24,7 +24,7 @@ router.post('/signup', async (req, res) => {
     } else {
         const newBusiness = new Business(req.body);
         await newBusiness.save();
-        const token = jwt.sign({ email }, SECRET, { expiresIn: '30d' });
+        const token = jwt.sign({ email, password }, SECRET, { expiresIn: '30d' });
         res.json({ message: 'Business registered successfully', token });
     }
 });

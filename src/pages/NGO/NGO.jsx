@@ -12,11 +12,7 @@ export default function NGO() {
     const [ngos, setNgos] = useState([]);
 
     const init = async () => {
-        const response = await axios.get(`${BASE_URL}/ngo/`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        })
+        const response = await axios.get(`${BASE_URL}/ngo/`, {})
         setNgos(ngo.concat(response.data.Ngos))
     }
 

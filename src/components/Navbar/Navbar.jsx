@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './Navbar.module.css'
+import { Link } from 'react-router-dom'
 export default function Navbar() {
 
     //Navbar color chagne logic
@@ -22,13 +23,18 @@ export default function Navbar() {
                     <li className={styles.navOption}><a href="home">Home</a></li>
                     <li className={styles.navOption}><a href="companies">Companies</a></li>
                     <li className={styles.navOption}><a href="ngo">NGOs</a></li>
-                    <li className={styles.navOption}><a href="#about">About Us</a></li>
-                    <li className={styles.navOption}><a href="#contact">Contact Us</a></li>
+                    <li className={styles.navOption}><Link to="/home#about" onClick={()=>{
+                        document.getElementById('about').scrollIntoView();
+                    }}>About Us</Link></li>
+                    <li className={styles.navOption}><Link to="/home#contact" onClick={()=>{
+                        document.getElementById('contact').scrollIntoView();
+                    }}>Contact Us</Link></li>
                 </ul>
                 <div className={styles.signIn}>
-                    <a onClick={()=>{
-                        window.location='/home#signin'
-                    }}>Contribute</a>
+                    <Link to="/home#signin" onClick={()=>{
+                        setTimeout(() => {}, 1000);
+                        document.getElementById('signin').scrollIntoView();
+                    }}>Contribute</Link>
                 </div>
             </div>
         </>
