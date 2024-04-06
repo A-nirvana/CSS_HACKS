@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.card{
+    height: 20rem;
+    width: 18rem;
+    margin: 0 1rem;
+    box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.619);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+.logos{
+    margin: 0 auto;
+    height: 7rem;
+    width: 7rem;
+    background-size: cover;
+}
+.logos img{
+    height: 7rem;
+    width: 7rem;
+    background-size: cover;
+
+}
+.Businessname{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.moto{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.info{
+    margin-top: 5rem;
+    margin-left: 1rem;
+}
+.info span{
+    font-weight: 600;
+}
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+    box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.619);
+}

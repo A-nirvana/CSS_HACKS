@@ -1,0 +1,50 @@
+
+.card {
+    background-color: #F6f6f6;
+    height: 12rem;
+    width: 50rem;
+    margin-top: 1rem;
+}
+.row1 {
+    height: 5rem;
+    /* padding: 0.5rem 1rem; */
+    width: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+}
+.logoContainer {
+    height: 4rem;
+    width: 4rem;
+}
+.logoContainer img {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.3rem 1rem;
+}
+
+.titleContainer {
+    padding-left: 2rem;
+}
+
+.titleContainer .h1 {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.titleContainer .h1 .span {
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    color: blue;
+    margin-left: 1rem;
+}
+.titleContainer .h5 {
+    font-weight: 200;
+}
+.ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}

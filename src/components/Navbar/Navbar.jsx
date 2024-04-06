@@ -22,11 +22,13 @@ export default function Navbar() {
                     <li className={styles.navOption}><a href="home">Home</a></li>
                     <li className={styles.navOption}><a href="companies">Companies</a></li>
                     <li className={styles.navOption}><a href="ngo">NGOs</a></li>
-                    <li className={styles.navOption}><a href="about">About Us</a></li>
-                    <li className={styles.navOption}><a href="contact">Contact Us</a></li>
+                    <li className={styles.navOption}><a href="#about">About Us</a></li>
+                    <li className={styles.navOption}><a href="#contact">Contact Us</a></li>
                 </ul>
                 <div className={styles.signIn}>
-                    <a href="#signin">Contribute</a>
+                    <a onClick={()=>{
+                        window.location='/home#signin'
+                    }}>Contribute</a>
                 </div>
             </div>
         </>
