@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
     if (user) {
         res.status(403).json({ message: 'Business already exists' });
     } else {
-        const newBusiness = new Business({ email, password });
+        const newBusiness = new Business(req.body);
         await newBusiness.save();
         const token = jwt.sign({ email }, SECRET, { expiresIn: '30d' });
         res.json({ message: 'Business registered successfully', token });

@@ -3,6 +3,9 @@ import {Signin, NGSignup } from '../../components';
 import styles from './NGAuth.module.css'
 import { setCookie } from '../cookie';
 import axios from 'axios';
+import { BASE_URL } from '../../config';
+import {useNavigate} from "react-router-dom";
+
 export default function NGAuth() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,6 +16,8 @@ export default function NGAuth() {
     const [goal, setGoal] = useState('');
     const [UID, setUID] = useState('');
     const [logo, setLogo] = useState('');
+
+    const navigate = useNavigate();
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -46,17 +51,21 @@ export default function NGAuth() {
     }
 
     const handleSubmit = async (e) =>{
-        const response = await axios.post(`${BASE_URL}/business/signup`,{
+        e.preventDefault()
+        const response = await axios.post(`${BASE_URL}/ngo/signup`,{
+            name : username,
             email,
             password,
             type : sector,
-            adress : city,
-            moto : goal,
+            address : city,
+            desc : goal,
             uid : UID,
             logo : logo
         })
 
-        setCookie("Authorization","Bearer "+response.data.token,30)
+        setCookie("Authorization","Bearer "+response.data.token,30);
+        alert(response.data.message)
+        navigate('/companies');
     }
 
     return (

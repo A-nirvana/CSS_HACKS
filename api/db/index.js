@@ -16,10 +16,10 @@ const NgoSchema = new mongoose.Schema({
 })
 
 const BusinessSchema = new mongoose.Schema({
-    Name : String,
-    Email : String,
+    name : String,
+    email : String,
     password : String,
-    ImageLink : String,
+    imageLink : String,
     website : String,
     sector : String,
 })
