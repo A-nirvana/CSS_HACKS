@@ -1,26 +1,29 @@
 import mongoose from "mongoose";
 
 const NgoSchema = new mongoose.Schema({
-    Name : String,
-    Email : String,
+    name : String,
+    email : String,
     password : String,
-    Phone : Number,
-    Address : String,
-    Description : String,
-    Rating : Number,
-    Verified : Boolean,
-    ImageLink : String,
-    DonationLink : String,
-    DonationType : String
+    moto : String,
+    logo : String,
+    address : String,
+    followers : Number,
+    volunteers : Number,
+    drills : Number,
+    type : String,
+    desc : String,
+    uid : String,
 })
 
 const BusinessSchema = new mongoose.Schema({
-    Name : String,
-    Email : String,
+    name : String,
+    email : String,
     password : String,
-    ImageLink : String,
-    website : String,
-    sector : String,
+    logo : String,
+    address : String,
+    followers : Number,
+    desc : String,
+    donations : Number,
 })
 
 const Ngo = mongoose.model('Ngo', NgoSchema);

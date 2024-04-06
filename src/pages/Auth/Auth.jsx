@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { Signin, Signup } from '../../components';
 import styles from './Auth.module.css';
 
+
 export default function Auth() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [isNewUser, setIsNewUser] = useState(false);
+    const [city, setCity] = useState('');
+    const [goal, setGoal] = useState('');
+    const [logo, setLogo] = useState('');
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -20,16 +24,22 @@ export default function Auth() {
         setUsername(e.target.value);
     }
 
+    const handleCity = (e) =>{
+        setCity(e.target.value)
+    }
 
-    //Code to handle form submission
-    const handleSubmit = (e) => {
-        
-    };
+    const handleGoal = (e) => {
+        setGoal(e.target.value);
+    }
 
-    return (
+    const handleLogo = (e) => {
+        setLogo(e.target.value);
+    }
+
+     return (
         <div className={styles.main}>
             <div className={styles.signIn} style={isNewUser?{"height":"21rem","width":"19rem"}:{}}>
-                {isNewUser ? Signup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange) : Signin(handleSubmit, email, handleEmailChange, password, handlePasswordChange)}
+                {isNewUser ? Signup(email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,city,handleCity,goal,handleGoal,logo,handleLogo) : Signin(email, handleEmailChange, password, handlePasswordChange,"business")}
                 {isNewUser? <p className={styles.haveAccount}>Already have an account? <a onClick={()=>{setIsNewUser(false);}}>Signin</a></p> :
                 <p className={styles.noAccount}>Don't have an account? <a onClick={()=>{
                     setIsNewUser(true);
@@ -39,5 +49,4 @@ export default function Auth() {
         </div>
         
     );
-};
-
+}

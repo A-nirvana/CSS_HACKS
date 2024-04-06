@@ -19,8 +19,8 @@ export default function Home() {
             </div>
             <div className={styles.finalHeadline}>
                 Join us and contribute  to the betterment of the society
-                <div className={styles.joinUs}>
-                    <a href="/auth">Join as a Corporate</a><a href="/ngoauth">Join as an NGO</a><a href="/auth">Contribute as an individual</a>
+                <div className={styles.joinUs} id='signin'>
+                    <a href="/auth">Join as a Corporate</a><a href="/ngoauth">Join as an NGO</a><a href="/ngo">Contribute as an individual</a>
                 </div>
             </div>
             <div className={styles.bulletinBoard}>
@@ -39,7 +39,7 @@ export default function Home() {
                     {Businesscard("/NGO logo.jpg", "Robin Hood Army","Save the Hungry Citizen","Delhi","2154+","26 January, 2013")}
                 </a>
                 <a href="/ngo">
-                    {Businesscard("/NGO logo.jpg", "Project Humanity","Save the Hungry Citizen","Mumbai","1846+","26 January, 2013")}
+                    {Businesscard("/NGO logo.jpg", "Project Humanity","Save the Hungry Citizen","Jorhat, Assam","1846+","26 January, 2019")}
                 </a>
                 <a href="/ngo">
                     {Businesscard("/NGO logo.jpg", "Child Rights and You","Save the Hungry Citizen","Guwahati","1295+","26 January, 2013")}
@@ -63,7 +63,7 @@ export default function Home() {
                 {Businesscard("/NGO logo.jpg", "Robin Hood Army","Save the Hungry Citizen","Tezpur","826+","26 January, 2013")}
             </div>
 
-            <div className={styles.aboutus}>
+            <div className={styles.aboutus} id='about'>
                 <h2>ABOUT US</h2>
                 <p>Established in Silchar 2024, The Giving Circle is a dedicated platform that facilitates connections between Multinational corporations (MNCs)
                      and non-governmental organizations (NGOs) to foster impactful corporate social responsibility (CSR) initiatives. This platform enables MNCs
@@ -73,7 +73,7 @@ export default function Home() {
                 <div className={styles.aboutimage}></div>
             </div>
 
-            <h2 className={styles.contactHeader}>CONTACT US</h2>
+            <h2 className={styles.contactHeader} id='contact'>CONTACT US</h2>
             <div className={styles.contactus}>
                 <div className={styles.writetous}>
                     <h3>Write To Us</h3>

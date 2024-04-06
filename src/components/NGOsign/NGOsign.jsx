@@ -1,15 +1,17 @@
-import { TextField } from '@mui/material';
-import styles from "./NGOsign.module.css";
-export function NGSignup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleTheme,handleCity, handleGoal, handleUID){
+
+export function NGSignup(handleSubmit, email, handleEmailChange, password, handlePasswordChange, username, handleUsernameChange,handleTheme,handleCity, handleGoal, handleUID,handleLogo){
     return (
-        <div className={styles.NGOsign}>
-            <h2>Welcome, <br/>We help you and you help the people</h2>
+        <div>
+            <h2>Welcome, We help you and you help the people</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <TextField className={styles.input} label="Email" variant="standard" value={email} onChange={handleEmailChange}/>
+                    <label>Email:</label>
+                    <input type="email" value={email} onChange={handleEmailChange} />
                 </div>
                 <div>
-                    <TextField className={styles.input} label="Organization Name" variant="standard" value={username} onChange={handleUsernameChange} />                </div>
+                    <label>Organization Name:</label>
+                    <input type="text" value={username} onChange={handleUsernameChange} />
+                </div>
                 <div>
                     <label>Which theme does your NGO work on</label>
                     <select onChange={handleTheme}>
@@ -37,6 +39,10 @@ export function NGSignup(handleSubmit, email, handleEmailChange, password, handl
                     </select>
                 </div>
                 <div>
+                    <label>Link to your logo :</label>
+                    <input type="text" onChange={handleLogo}/>
+                </div>
+                <div>
                     <label>What is the main goal of your NGO :</label>
                     <input type="text" onChange={handleGoal} />
                 </div>
@@ -45,10 +51,12 @@ export function NGSignup(handleSubmit, email, handleEmailChange, password, handl
                     <input type="text" onChange={handleUID}/>
                 </div>
                 <div>
-                    <TextField className={styles.input} label="Password" variant="standard" type="password" value={password} onChange={handlePasswordChange} />
+                    <label>Set a Password:</label>
+                    <input type="password" value={password} onChange={handlePasswordChange} />
                 </div>
                 <div>
-                    <TextField className={styles.input} label="Confirm Password" variant="standard" type="password"/>
+                    <label>Confirm Password:</label>
+                    <input type="password" />
                 </div>
                 <button type="submit">Sign In</button>
             </form>

@@ -18,7 +18,7 @@ export default function NgoCard({data}) {
             <li>{data.followers}</li>
             <li>{data.volunteers}</li>
             <li>{data.drills}</li>
-            <li>TBD</li>
+            <li>{data.name=="Project Humanity"?<img src="/QRCode.png" className={styles.QR}></img>:<></>}</li>
         </ul>
         <p className={styles.p1}>Type: {data.type}</p>
         <p className={styles.p2}>
